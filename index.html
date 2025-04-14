@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Link Tracking Dashboard</h1>
+        
+        <div class="dashboard">
+            <div class="link-creator">
+                <h2>Create Tracking Link</h2>
+                <form id="linkForm">
+                    <label for="targetUrl">Destination URL:</label>
+                    <input type="url" id="targetUrl" required placeholder="https://example.com">
+                    
+                    <label for="linkName">Link Name (optional):</label>
+                    <input type="text" id="linkName" placeholder="My Tracking Link">
+                    
+                    <button type="submit">Create Tracking Link</button>
+                </form>
+                
+                <div id="generatedLink">
+                    <h3>Your Tracking Link:</h3>
+                    <div class="link-container">
+                        <a id="trackLink" target="_blank"></a>
+                        <button id="copyLink">Copy</button>
+                    </div>
+                </div>
+                
+                <h2>Your Tracking Links</h2>
+                <table id="trackingData">
+                    <thead>
+                        <tr>
+                            <th>Link Name</th>
+                            <th>Visits</th>
+                            <th>Last Visit</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <div class="map-container">
+                <h2>Visitor Locations</h2>
+                <div id="trackingMap"></div>
+                <div id="visitDetails">
+                    <h3>Visit Details</h3>
+                    <div id="detailsContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
